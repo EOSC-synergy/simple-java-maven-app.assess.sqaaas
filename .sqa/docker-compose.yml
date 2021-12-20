@@ -1,2 +1,12 @@
-services: {}
+services:
+  qc.lic_boozy-smalt-maltese:
+    build:
+      context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Lic/licensee
+      dockerfile: Dockerfile
+    command: sleep 6000000
+    volumes:
+    - source: ./
+      target: /sqaaas-build
+      type: bind
+    working_dir: /sqaaas-build
 version: '3.7'
