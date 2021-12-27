@@ -1,5 +1,5 @@
 services:
-  qc.lic_boozy-smalt-maltese:
+  qc.lic_hazy-magnolia-tarantula:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Lic/licensee
       dockerfile: Dockerfile
