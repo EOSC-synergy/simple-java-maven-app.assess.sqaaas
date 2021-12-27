@@ -14,6 +14,6 @@ sqa_criteria:
     repos:
       github.com/jenkins-docs/simple-java-maven-app:
         commands:
-        - /usr/bin/env sh .sqa/script.paltry-taupe-reindeer.sh
-        container: qc.lic_boozy-smalt-maltese
+        - /usr/bin/env sh .sqa/script.shaggy-heliotrope-hound.sh
+        container: qc.lic_hazy-magnolia-tarantula
 timeout: 600
