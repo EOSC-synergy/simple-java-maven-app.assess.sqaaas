@@ -2,18 +2,51 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: staging
+      branch: release/2.0.1
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/jenkins-docs/simple-java-maven-app:
       branch: master
       repo: https://github.com/jenkins-docs/simple-java-maven-app
 environment:
-  JPL_KEEPGOING: true
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
 sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/jenkins-docs/simple-java-maven-app git:
+        commands:
+        - /usr/bin/env sh .sqa/script.gimpy-linen-wolf.sh
+        container: qc.acc_beady-viridian-cat
+  QC.Doc:
+    repos:
+      github.com/jenkins-docs/simple-java-maven-app find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.seedy-green-shark.sh
+        container: qc.doc_pasty-emerald-gopher
+      github.com/jenkins-docs/simple-java-maven-app git:
+        commands:
+        - /usr/bin/env sh .sqa/script.bumpy-turquoise-jackal.sh
+        container: qc.doc_craggy-magnolia-tzu
+      github.com/jenkins-docs/simple-java-maven-app markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.gummy-firebrick-fowl.sh
+        container: qc.doc_wimpy-charcoal-moorhen
   QC.Lic:
     repos:
-      github.com/jenkins-docs/simple-java-maven-app:
+      github.com/jenkins-docs/simple-java-maven-app licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.shaggy-heliotrope-hound.sh
-        container: qc.lic_hazy-magnolia-tarantula
-timeout: 600
+        - /usr/bin/env sh .sqa/script.wimpy-scarlet-liger.sh
+        container: qc.lic_lanky-white-peccary
+  QC.Sty:
+    repos:
+      github.com/jenkins-docs/simple-java-maven-app checkstyle:
+        commands:
+        - /usr/bin/env sh .sqa/script.tacky-azure-malamute.sh
+        container: qc.sty_silly-cornflower-goose
+  QC.Ver:
+    repos:
+      github.com/jenkins-docs/simple-java-maven-app get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.skinny-tangerine-spaniel.sh
+        container: qc.ver_shaggy-cardinal-frise
+timeout: 5400
