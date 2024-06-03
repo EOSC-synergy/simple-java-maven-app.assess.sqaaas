@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/2.0.1
+      branch: release/2.1.1
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/jenkins-docs/simple-java-maven-app:
       branch: master
@@ -15,38 +15,38 @@ sqa_criteria:
     repos:
       github.com/jenkins-docs/simple-java-maven-app git:
         commands:
-        - /usr/bin/env sh .sqa/script.gimpy-linen-wolf.sh
-        container: qc.acc_beady-viridian-cat
+        - /usr/bin/env sh .sqa/script.jumpy-peach-lion.sh
+        container: qc.acc_stealthy-white-ragdoll
   QC.Doc:
     repos:
       github.com/jenkins-docs/simple-java-maven-app find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.seedy-green-shark.sh
-        container: qc.doc_pasty-emerald-gopher
+        - /usr/bin/env sh .sqa/script.tasty-cinnamon-newt.sh
+        container: qc.doc_messy-sepia-manatee
       github.com/jenkins-docs/simple-java-maven-app git:
         commands:
-        - /usr/bin/env sh .sqa/script.bumpy-turquoise-jackal.sh
-        container: qc.doc_craggy-magnolia-tzu
+        - /usr/bin/env sh .sqa/script.tasty-tangerine-toad.sh
+        container: qc.doc_stinky-wisteria-rabbit
       github.com/jenkins-docs/simple-java-maven-app markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.gummy-firebrick-fowl.sh
-        container: qc.doc_wimpy-charcoal-moorhen
+        - /usr/bin/env sh .sqa/script.leaky-harlequin-audemer.sh
+        container: qc.doc_homey-copper-earwig
   QC.Lic:
     repos:
       github.com/jenkins-docs/simple-java-maven-app licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.wimpy-scarlet-liger.sh
-        container: qc.lic_lanky-white-peccary
+        - /usr/bin/env sh .sqa/script.sleazy-cyan-oriole.sh
+        container: qc.lic_shabby-azure-weasel
   QC.Sty:
     repos:
       github.com/jenkins-docs/simple-java-maven-app checkstyle:
         commands:
-        - /usr/bin/env sh .sqa/script.tacky-azure-malamute.sh
-        container: qc.sty_silly-cornflower-goose
+        - /usr/bin/env sh .sqa/script.leaky-lavender-fousek.sh
+        container: qc.sty_greasy-vermilion-magpie
   QC.Ver:
     repos:
       github.com/jenkins-docs/simple-java-maven-app get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.skinny-tangerine-spaniel.sh
-        container: qc.ver_shaggy-cardinal-frise
+        - /usr/bin/env sh .sqa/script.blurry-aquamarine-catfish.sh
+        container: qc.ver_pokey-grey-wolf
 timeout: 5400
